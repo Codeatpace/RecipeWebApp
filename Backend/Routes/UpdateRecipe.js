@@ -11,13 +11,13 @@ router.put('/upRecipe/:id', async (req, res) => {
         { dishName, ingredients, steps, imgSrc },
         { new: true }
       );
-      res.status(200).json({success:true})
+      res.status(200).json({success:true, updatedRecipe})
   
       if (!updatedRecipe) {
         return res.status(404).json({ error: 'Recipe not found' });
       }
   
-      res.json(updatedRecipe);
+      // res.json(updatedRecipe);
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Server Error', message: error.message });

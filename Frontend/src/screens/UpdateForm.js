@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 const UpdateForm = () => {
@@ -27,6 +27,34 @@ const UpdateForm = () => {
         setcredentials({...credentials, [e.target.name]:e.target.value})
         
       }
+      let val 
+      useEffect(() => {
+        const fetchData = async () => {
+          try{
+            const res = await fetch(`http://localhost:5000/api/recipe/${id}`,{
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              }
+              )
+              const json =  await res.json();
+            console.log("Json ",json)
+            setcredentials({
+              dishName: json.dishName,
+              ingredients: json.ingredients,
+              steps: json.steps,
+              imgSrc: json.imgSrc
+            })
+            // console.log("json dishname ", json.dishName)
+          }
+          catch(err){
+            console.log(err)
+          }
+        }
+        fetchData()
+      }, [id])
+      
   return (
     <div>
       <center><h1><i>Apni Rasoi!!</i></h1></center>

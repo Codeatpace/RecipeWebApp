@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-const mongoURI = "mongodb+srv://singhsakshidb:Sakshi.22@cluster0.jbryvkn.mongodb.net/Recipe?retryWrites=true&w=majority"
+const dotenv = require('dotenv')
+dotenv.config({path:'./Info.env'})
+const mongoURI = process.env.URI
 
 const mongoDB = async () => {
     try{

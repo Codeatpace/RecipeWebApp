@@ -9,7 +9,7 @@ const Home = () => {
 
   const recipesAll = async () => {
     try {
-      let response = await fetch("http://localhost:5000/api/allRecipes", {
+      let response = await fetch("https://recipewebapp-2.onrender.com/api/allRecipes", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -29,7 +29,7 @@ const Home = () => {
   const deleteRecipe = async(dishName) => {
     // console.log("button clicked")
     try {
-      let response = await fetch("http://localhost:5000/api/delRecipes", {
+      let response = await fetch("https://recipewebapp-2.onrender.com/api/delRecipes", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

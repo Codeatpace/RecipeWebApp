@@ -5,7 +5,7 @@ const Create = () => {
     const [credentials, setcredentials] = useState({dname:"", ingredients:"", steps:"", imgSrc:""});
     const handleSubmit = async(e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:5000/api/createrecp', {
+        const response = await fetch('https://recipewebapp-2.onrender.com/api/createrecp', {
           method: "POST",
           headers:{
             "Content-Type": "application/json"

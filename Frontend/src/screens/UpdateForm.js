@@ -6,7 +6,7 @@ const UpdateForm = () => {
     const [credentials, setcredentials] = useState({dishName:"", ingredients:"", steps:"", imgSrc:""});
     const handleSubmit = async(e) => {
         e.preventDefault();
-        const response = await fetch(`http://localhost:5000/api/upRecipe/${id}`, {
+        const response = await fetch(`https://recipewebapp-2.onrender.com/api/upRecipe/${id}`, {
           method: "PUT",
           headers:{
             "Content-Type": "application/json"

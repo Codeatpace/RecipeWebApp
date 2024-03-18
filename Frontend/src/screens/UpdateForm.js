@@ -31,7 +31,7 @@ const UpdateForm = () => {
       useEffect(() => {
         const fetchData = async () => {
           try{
-            const res = await fetch(`https://recipewebapp-2.onrender.com/api/recipe/${id}`,{
+            const res = await fetch(`https://recipewebapp-2.onrender.com/api/recipe/${id}`,{ 
               method: "GET",
               headers: {
                 "Content-Type": "application/json",
